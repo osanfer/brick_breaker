@@ -5,28 +5,47 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script type="text/javascript" src="js/lib/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="js/utils.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/globals.js"></script>
+	<script type="text/javascript" src="js/class/DataBase.js"></script>
+	<script type="text/javascript" src="js/class/Sensor.js"></script>
+	<script type="text/javascript" src="js/class/Paddle.js"></script>
+	<script type="text/javascript" src="js/class/Ball.js"></script>
+	<script type="text/javascript" src="js/class/Brick.js"></script>
+	<script type="text/javascript" src="js/levelWorker.js"></script>
+	<script type="text/javascript" src="js/game.js"></script>
 	<link rel="Stylesheet" href="css/style.css">
 </head>
 
 <body>
 	<div id="container">
-		<img id="mainBanner" src="img/banner.png">
-		<div class="menuButton" id="playButton">
-			<span>PLAY</span>
-		</div>
-		<div class="menuButton" id="tutorialButton">
-			<span>TUTORIAL</span>
-		</div>
-		<div class="menuButton" id="highscoreButton">
-			<span>SCORE</span>
-		</div>
-		<div class="menuButton" id="creditsButton">
-			<span>CREDITS</span>
-		</div>
-		<canvas id="mainBackCanvas">
+		<canvas id="backgroundCanvas">
 		</canvas>
-		<canvas id="mainSceneCanvas">
+		<canvas id="foregroundCanvas">
 		</canvas>
+		<canvas id="HUDCanvas">
+		</canvas>
+		<div id="menu">
+			<div id="play">
+				<h3>PLAY</h3>
+			</div>
+			<div id="instructions">
+				<h3>HOW TO PLAY</h3>
+				<p style="display:none;">Use left and right arrow to move the paddle.<br>Space for action.</p>
+			</div>
+			<div id="score">
+				<h3>HIGHSCORE</h3>
+			</div>
+			<div id="credits">
+				<h3>CREDITS</h3>
+				<p style="display:none;">The source code has been developed by Óscar Sánchez.<br>All the graphic material has been
+					extracted from Opengameart.org under Creative Commons licenses.<br>This game has been developed like exercise of
+					the videogame programming master from U.A. School.</p>
+			</div>
+			<div id="logo">
+				<img id="logo" src="img/logo_UA.svg">
+			</div>
+		</div>
 	</div>
 </body>
 

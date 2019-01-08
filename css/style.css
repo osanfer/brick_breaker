@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Audiowide';
+    src: url('font/Audiowide-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body{
+    font-family: Audiowide;
+    width: 100%;
+    height: 100%;
+    padding:0px;
+    margin:0px;
+    overflow:hidden;
+    background:black;
+}
+
+#backgroundCanvas {
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    border: solid 1px white;
+	z-index: 0;
+}
+
+#foregroundCanvas {
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    border: solid 1px white;
+	z-index: 1;
+}
+
+#HUDCanvas {
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    border: solid 1px white;
+	z-index: 2;
+}
+
+#menu {
+    font-family: Audiowide;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    top: 20px;
+    width: 300px;
+    position: absolute;
+    border: solid 1px white;
+    z-index: 2;
+    color: white;
+}
+
+#logo{
+    height: 100px;
+}
+#logo img{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 120px;
+}
