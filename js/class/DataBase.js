@@ -28,7 +28,7 @@ function DataBase() {
      */
     this.insertScore = function (player, level, score) {
         this.dataBase.transaction(function (tx) {
-            tx.executeSql('INSERT INTO SCORES (player, level, score) values(?, ?, ?)', [player, level, score], function () { }, function () { console.log("error") });
+            tx.executeSql('INSERT INTO SCORES (player, level, score) values(?, ?, ?)', [player, level, score], function () { DB.getScores(); }, function () { console.log("error") });
         });
     }
 

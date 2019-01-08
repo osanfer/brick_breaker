@@ -205,6 +205,9 @@ function calculateCollisions() {
                     }
                 }
                 if (brick.lifes <= 0) {
+                    if (getRandom(0, 100) < 15) {
+                        powerUps.push(new PowerUp(brick.x + 7, brick.y + 4));
+                    }
                     currentGrid.splice(b, 1);
                 }
             }
@@ -232,6 +235,7 @@ function resetGlobals() {
     score = 0;
     player = undefined;
     balls = new Array();
+    powerUps = new Array();
     currentLevel = 0;
     currentGrid = new Array();
     DB.getScores();
@@ -252,6 +256,35 @@ function updateHUD() {
     }
 }
 
+function updatePowerUps() {
+    for (var i = powerUps.length - 1; i >= 0; i--) {
+        var powerUp = powerUps[i];
+        if (powerUp.y > SCREEN_HEIGHT) {
+            powerUps.splice(i, 1);
+        } else if (squareCollision(powerUp.x, powerUp.y, powerUp.width, powerUp.height,
+            player.x, player.y, player.width, player.height)) {
+            if (powerUp.type == 1) {
+                player.lifes++;
+            } else if (powerUp.type > 1) {
+                var b1 = new Ball();
+                b1.x = balls[0].x;
+                b1.y = balls[0].y;
+                b1.isMoving = true;
+                b1.angle = balls[0].angle + 25;
+                balls.push(b1);
+                var b2 = new Ball();
+                b2.x = balls[0].x;
+                b2.y = balls[0].y;
+                b2.isMoving = true;
+                b2.angle = balls[0].angle - 25;
+                balls.push(b2);
+            }
+            powerUps.splice(i, 1);
+        } else {
+            powerUp.update();
+        }
+    }
+}
 /**
  * Inicializa la base de datos.
  */

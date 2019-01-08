@@ -25,6 +25,7 @@ life_img.src = "img/paddle.png";
 
 // Lista de bolas en juego
 var balls = new Array();
+var powerUps = new Array();
 
 // Constantes para el mapa
 var COLUMNS = Math.floor(SCREEN_WIDTH / 64);

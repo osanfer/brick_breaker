@@ -28,6 +28,7 @@ function gameLoop() {
     drawBricks();
     player.update();
     calculateCollisions();
+    updatePowerUps();
     updateBalls();
     clearTimeout(gameCoolDown);
     updateHUD();
@@ -66,12 +67,12 @@ function gameOver() {
     FOREGROUND_CTX.textAlign = "center";
     FOREGROUND_CTX.fillText('GAME OVER', SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
     for (var i = 0; i < HIGHSCORES.length; i++) {
-        if (highscore > HIGHSCORES[i].score) {
+        if (score > HIGHSCORES[i].score) {
             var initials = "";
             do {
                 initials = getPlayerInitials();
             } while (initials.length == 0 || initials.length > 3);
-            DB.insertScore(initials.toUpperCase(), currentLevel, highscore);
+            DB.insertScore(initials.toUpperCase(), currentLevel, score);
             break;
         }
     }

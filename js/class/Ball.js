@@ -1,5 +1,5 @@
 function Ball() {
-    var MAX_SPEED = 8;
+    var MAX_SPEED = 9;
     var ACCELERATION = 0.15;
     this.width = 14;
     this.height = 14;
@@ -7,7 +7,7 @@ function Ball() {
     this.y = player.y - this.height - 10;
     this.img = new Image();
     this.img.src = "img/ball.png";
-    this.angle = -45;               // Por comodidad el angulo siempre esta eng rados y la conversión se hace en otro sitio.
+    this.angle = -60;               // Por comodidad el angulo siempre esta eng rados y la conversión se hace en otro sitio.
     this.speed = 3;
     this.isMoving = false;
     //Sensores de choque
