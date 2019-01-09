@@ -5,7 +5,7 @@ self.onmessage = function (e) {
     var columns = e.data.columns;
     var lvl = e.data.lvl;
     //Calculo los puntos que gastaré en el nivel.
-    var lvlPoints = rows * columns + lvl * 5;
+    var lvlPoints = rows * columns / 2 + lvl * 5;
     var grid = new Array();
     for (var r = 0; r < rows; r++) {
         for (var c = 0; c < columns; c++) {

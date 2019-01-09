@@ -3,7 +3,7 @@ function PowerUp(x, y) {
     this.height = 23;
     this.x = x;
     this.y = y;
-    this.type = getRandom(1, 5);
+    this.type = getRandom(1, 2);
     this.img = new Image();
     this.img.src = this.type == 1 ? "img/1up.png" : "img/split.png";
 

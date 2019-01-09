@@ -1,0 +1,11 @@
+Brick Breaker Version 1.0:
+- Uso de workers para generación aleatoria de niveles.
+- Uso de base de datos para tabla de puntuaciones.
+- Control de rebotes simple.
+- Power Ups de vidas y multiplicación de bolas.
+
+Previsto para la version 2.0:
+- Añadir Audio.
+- Mejorar generación de niveles.
+- Añadir más power ups.
+- Mejorar colisiones.

@@ -205,7 +205,7 @@ function calculateCollisions() {
                     }
                 }
                 if (brick.lifes <= 0) {
-                    if (getRandom(0, 100) < 15) {
+                    if (getRandom(0, 100) < 10) {
                         powerUps.push(new PowerUp(brick.x + 7, brick.y + 4));
                     }
                     currentGrid.splice(b, 1);
@@ -265,7 +265,7 @@ function updatePowerUps() {
             player.x, player.y, player.width, player.height)) {
             if (powerUp.type == 1) {
                 player.lifes++;
-            } else if (powerUp.type > 1) {
+            } else if (powerUp.type == 2) {
                 var b1 = new Ball();
                 b1.x = balls[0].x;
                 b1.y = balls[0].y;
